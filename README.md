@@ -6,3 +6,4 @@
 * [ER図サンプル](/wiki/ER図サンプル.md)
 * [gradleの基本知識](/wiki/gradleの基本知識.md.md)
 * [pokeAPIを利用する](/wiki/pokeAPIを利用する.md)
+* [vscode設定共有](/wiki/vscode設定共有.md)
