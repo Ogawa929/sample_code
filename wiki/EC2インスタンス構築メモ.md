@@ -11,6 +11,7 @@
 
 
 ## EC2構築時の設定
+### sudo設定、ユーザーの追加
 1. sshキーで接続できるようにしておく。  
    1. セキュリティグループでport 22を開放しておく。接続元のIPが固定の場合は指定しておくと安全。
    1. キーペアを作成してEC2に割り当てる。
@@ -33,3 +34,11 @@
       * `cp -r /home/ec2-user/.ssh /home/[user_name]`
       * `chmod 700 /home/[user_name]/.ssh`
       * `chown -R [user_name]:[user_group] /home/[user_name]/.ssh`
+
+### Dockerインストール
+1. パッケージとパッケージキャッシュを更新 `sudo yum update -y`
+1. 最新のDocker Community Editionをインストール`sudo yum -y install docker`
+1. docker起動 `sudo systemctl start docker`
+1. docker自動起動 `sudo systemctl enable docker`
+1. dockerの動作確認 `sudo docker run hello-world`
+1. 一般ユーザーにdocker操作権限の付与 `sudo usermod -aG docker [user_name]`<br>※グループの反映にはセッションの更新が必要
