@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class Lambda {
     public static void main(String[] args) {
@@ -51,7 +52,21 @@ public class Lambda {
         // list.forEach( a -> System.out.println(a));
         list.forEach(System.out::println);
 
+        // コンストラクタ参照
+        // Supplier<Hoge> obj1 = () -> new Hoge();
+        // System.out.println(obj1.get().a);
+        Supplier<Hoge> obj2 = Hoge::new;
+        System.out.println(obj2.get().a);
 
     }
     
+}
+
+class Hoge {
+    int a = 0;
+    Hoge() {
+    }
+    Hoge(int a) {
+        this.a = a;
+    }
 }
